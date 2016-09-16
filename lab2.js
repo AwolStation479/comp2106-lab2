@@ -48,8 +48,7 @@ function compare (user,comp) {
             // User chooses cup...
             (user == 'cup' && // ... which beats rock and scissors.
                     (comp == 'rock' || comp == 'scissors'))
-            ) 
-        {
+        ) {
             // If the player wins:
             result += 'Player wins!';
         }
