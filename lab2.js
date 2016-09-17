@@ -23,16 +23,18 @@ function compare (user,comp) {
     var plays = ['rock','paper','scissors','rope','cup'];
 
     // Check for valid play:
-    if (
-        user == 'rock' ||
-        user == 'paper' ||
-        user == 'scissors' ||
-        user == 'rope' ||
-        user == 'cup'
-    ) {
+    if (plays.indexOf(user) == -1) {
+        // Play is invalid.
+        alert('Invalid choice. Please play again!');
+    }
+    else {
         // Play is valid!
         // Compare the user's play against the computer's.
-        if(
+        if (user == comp) {
+            // If the player and computer draw:
+            result += 'It\'s a draw!';
+        }
+        else if (
             // User chooses rock...
             (user == 'rock' && // ... which beats scissors and rope.
                     (comp == 'scissors' || comp == 'rope')) ||
@@ -52,20 +54,12 @@ function compare (user,comp) {
             // If the player wins:
             result += 'Player wins!';
         }
-        else if (user == comp) {
-            // If the player and computer draw:
-            result += 'It\'s a draw!';
-        }
         else {
             // If the computer wins:
             result += 'Computer wins!';
         }
         // Log the final message to the console.
         alert(choices+result);
-    }
-    // Play is invalid.
-    else {
-        alert('Invalid choice. Please play again!')
     }
 } // end method: compare(user,comp);
 
